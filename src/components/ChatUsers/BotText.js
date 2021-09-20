@@ -1,19 +1,10 @@
 import React, {useContext, useEffect} from 'react';
 import Context from "../context/Context";
 
-function BotText(props) {
-    const {
-        userMessagesList,
-        fetchData
-    } = useContext(Context)
-
-    useEffect(() => {
-        fetchData()
-    }, [userMessagesList]);
-
+function BotText({text}) {
     return (
         <div>
-            {userMessagesList.map((message)=> message.answer)}
+            {text}
         </div>
     );
 }

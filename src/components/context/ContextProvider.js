@@ -6,12 +6,12 @@ import Context from "./Context";
 function ContextProvider({children}) {
 
     const [userMessagesList, setUserMessegesList] = useState([]);
-    const [botMessagesList, setBotMessegesList] = useState([]);
     const [userMessage, setUserMessage] = useState('');
     const [error, setError] = useState();
 
-    const fetchData = async () => {
 
+
+    const fetchData = async () => {
             try {
                 const resp = await fetch('https://api.chucknorris.io/jokes/random')
                 if (!resp.ok) {
@@ -19,14 +19,15 @@ function ContextProvider({children}) {
                 } else {
                     const json = await resp.json()
                     const {value} = json
-                    setUserMessage(value)
+                    setUserMessegesList([...userMessagesList, {text: value, type: 'bot', date: new Date()}])
             }
             }catch (err) {
                 setError(err.message)
             }
         }
 
-
+    console.log(userMessage)
+    console.log(userMessagesList)
     return (
         <Context.Provider value={{
             userMessagesList,

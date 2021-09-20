@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import Context from "../context/Context";
 
 function ChatMessageForm() {
@@ -8,23 +8,21 @@ function ChatMessageForm() {
         setUserMessegesList,
         userMessage,
         setUserMessage,
-        fetchData
+        fetchData,
     } = useContext(Context)
+
 
     const titleChangeHandler = (e) => {
         setUserMessage(e.target.value)
     }
+    
 
     const submitHandler = (event) => {
         event.preventDefault()
-        setUserMessegesList([...userMessagesList, userMessage])
-        setUserMessage('')
+        setUserMessegesList([...userMessagesList, {text: userMessage, type: 'user', date: new Date()}])
+        setUserMessage("")
+        setTimeout(() => fetchData(), 5000)
     }
-
-    useEffect(() => {
-        fetchData()
-        setUserMessage('')
-    }, [userMessagesList]);
 
     return (
         <div>
