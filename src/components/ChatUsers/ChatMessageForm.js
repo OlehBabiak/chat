@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import Context from "../context/Context";
 
 function ChatMessageForm() {
@@ -10,7 +10,6 @@ function ChatMessageForm() {
         setUserMessage,
         fetchData,
     } = useContext(Context)
-
 
     const titleChangeHandler = (e) => {
         setUserMessage(e.target.value)
@@ -30,7 +29,7 @@ function ChatMessageForm() {
                 <textarea
                     value={userMessage}
                     onChange={titleChangeHandler}/>
-                {<button type='submit'>Send</button>}
+                {userMessage.length > 0 && <button type='submit'>Send</button>}
             </form>
         </div>
     );

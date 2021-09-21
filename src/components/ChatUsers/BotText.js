@@ -1,10 +1,13 @@
 import React, {useContext, useEffect} from 'react';
 import Context from "../context/Context";
+import MessageDate from "../ChatUsers/MessageDate"
 
-function BotText({text}) {
+function BotText(props) {
+    console.log(props)
     return (
         <div>
-            {text}
+            <div>Bot: {props.msg.text}</div>
+            <MessageDate date={props.msg.date}/>
         </div>
     );
 }

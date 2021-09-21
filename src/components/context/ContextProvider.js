@@ -8,8 +8,20 @@ function ContextProvider({children}) {
     const [userMessagesList, setUserMessegesList] = useState([]);
     const [userMessage, setUserMessage] = useState('');
     const [error, setError] = useState();
+    const [userSearch, setUserSearch] = useState('');
+    const userArray = [
+        {id:1, name: 'Alice Freman', messages: userMessagesList},
+        {id:2, name: 'Josefina', messages: userMessagesList},
+        {id:3, name: 'Velasquez', messages: userMessagesList},
+        {id:4, name: 'Barrera', messages: userMessagesList},
+        {id:5, name: 'Victoria', messages: userMessagesList},
+        {id:6, name: 'Cabanitos', messages: userMessagesList}]
 
 
+    console.log(userSearch)
+    const searchChangeHandler = (e) => {
+        setUserSearch(e.target.value)
+    }
 
     const fetchData = async () => {
             try {
@@ -19,22 +31,23 @@ function ContextProvider({children}) {
                 } else {
                     const json = await resp.json()
                     const {value} = json
-                    setUserMessegesList([...userMessagesList, {text: value, type: 'bot', date: new Date()}])
+                    setUserMessegesList(userMessagesList =>[...userMessagesList, {text: value, type: 'bot', date: new Date()}])
             }
             }catch (err) {
                 setError(err.message)
             }
         }
 
-    console.log(userMessage)
-    console.log(userMessagesList)
     return (
         <Context.Provider value={{
             userMessagesList,
             setUserMessegesList,
             fetchData,
             setUserMessage,
-            userMessage
+            userMessage,
+            userArray,
+            searchChangeHandler,
+            userSearch
         }}>
             {children}
         </Context.Provider>
