@@ -1,12 +1,20 @@
 import React from 'react';
-import ChatMessageTitle from "../ChatUsers/ChatMessageTitle";
-import ChatMessages from "../ChatUsers/ChatMessages";
+import ChatMessageTitle from "./ChatMessageTitle";
+import ChatMessages from "./ChatMessages";
+import ChatMessageForm from "./ChatMessageForm";
 
 function Chat() {
     return (
         <div>
-            <ChatMessageTitle/>
-            <ChatMessages/>
+            <div>
+                <ChatMessageTitle/>
+            </div>
+            <div>
+                <ChatMessages/>
+            </div>
+            <div>
+                <ChatMessageForm/>
+            </div>
         </div>
     );
 }

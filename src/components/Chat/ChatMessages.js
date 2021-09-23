@@ -1,12 +1,9 @@
 import React, {useContext} from 'react';
 import Context from "../context/Context";
-import BotText from "./BotText";
-import UserText from "./UserText";
-import ChatMessageForm from "./ChatMessageForm";
-import {useParams} from "react-router-dom";
+import BotText from "./message/BotText";
+import UserText from "./message/UserText";
 
 function ChatMessages() {
-    const {id} = useParams()
 
     const {
         userMessagesList,
@@ -21,7 +18,6 @@ function ChatMessages() {
                         <BotText msg={message}/>
                 )}
             </div>
-            <ChatMessageForm/>
         </>
 
     );

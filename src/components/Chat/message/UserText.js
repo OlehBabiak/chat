@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageDate from "../ChatUsers/MessageDate"
+import MessageDate from ".//MessageDate"
 
 function UserText(props) {
     console.log(props)

@@ -10,15 +10,18 @@ function ContextProvider({children}) {
     const [error, setError] = useState();
     const [userSearch, setUserSearch] = useState('');
     const userArray = [
-        {id:1, name: 'Alice Freman', messages: userMessagesList},
-        {id:2, name: 'Josefina', messages: userMessagesList},
-        {id:3, name: 'Velasquez', messages: userMessagesList},
-        {id:4, name: 'Barrera', messages: userMessagesList},
-        {id:5, name: 'Victoria', messages: userMessagesList},
-        {id:6, name: 'Cabanitos', messages: userMessagesList}]
+        {id:1, avatar: '', name: 'Alice Freman', messages: []},
+        {id:2, name: 'Josefina', messages: []},
+        {id:3, name: 'Velasquez', messages: []},
+        {id:4, name: 'Barrera', messages: []},
+        {id:5, name: 'Victoria', messages: []},
+        {id:6, name: 'Cabanitos', messages: []}]
 
 
-    console.log(userSearch)
+    const cleanSearchField = () => {
+        setUserSearch('')
+    }
+
     const searchChangeHandler = (e) => {
         setUserSearch(e.target.value)
     }
@@ -47,7 +50,8 @@ function ContextProvider({children}) {
             userMessage,
             userArray,
             searchChangeHandler,
-            userSearch
+            userSearch,
+            cleanSearchField
         }}>
             {children}
         </Context.Provider>

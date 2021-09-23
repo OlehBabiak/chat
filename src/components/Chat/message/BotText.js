@@ -1,6 +1,5 @@
-import React, {useContext, useEffect} from 'react';
-import Context from "../context/Context";
-import MessageDate from "../ChatUsers/MessageDate"
+import React from 'react';
+import MessageDate from ".//MessageDate"
 
 function BotText(props) {
     console.log(props)
