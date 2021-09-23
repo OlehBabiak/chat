@@ -1,6 +1,8 @@
 import React, {useContext} from 'react';
 import Context from "../context/Context";
 import {useParams} from 'react-router-dom'
+import {ChatTitle} from "./ChatStyled";
+import {UserImageWrapper} from "../UsersChat/UserStyled";
 
 function ChatMessageTitle() {
     const {id} = useParams()
@@ -8,11 +10,11 @@ function ChatMessageTitle() {
     const {userArray} = useContext(Context)
 
     return (
-        <div>
+        <>
             {
-                userArray.filter(value => value.id.toString() === id.slice(1)).map(user => <p>{user.name}</p>)
+                userArray.arr.filter(value => value.id.toString() === id.slice(1)).map(user => <ChatTitle><UserImageWrapper src={user.avatar}/><p>{user.name}</p></ChatTitle>)
             }
-        </div>
+        </>
     );
 }
 

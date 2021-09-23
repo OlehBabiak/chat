@@ -4,7 +4,7 @@ import {DateWrapper, DialogSubTitle, DialogTitle, UserImageWrapper, UserNameWrap
 function User(props) {
     return (
         <UserWrapper>
-            <UserImageWrapper src='https://s.ws.pho.to/img/index/ai/source.jpg' alt='avatar'/>
+            <UserImageWrapper src={props.user.avatar} alt='avatar'/>
             <div>
                 <DialogTitle>
                     <UserNameWrapper>{props.user.name}</UserNameWrapper>

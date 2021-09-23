@@ -6,17 +6,16 @@ import {
     BrowserRouter as Router,
 } from "react-router-dom";
 import Routes from "./components/Routes";
-import {ChatContainer, ContentWrapper, Header, Side} from "./AppStyled";
+import {ChatContainer, ContentWrapper, Search, Side} from "./AppStyled";
 
 function App() {
   return (
-      
       <Router>
           <ContextProvider>
               <ContentWrapper>
-                  <Header>
+                  <Search>
                       <ChatSearch/>
-                  </Header>
+                  </Search>
                   <Side>
                       <UserList/>
                   </Side>

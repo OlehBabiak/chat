@@ -1,33 +1,41 @@
 import styled from "styled-components"
 
 const ContentWrapper = styled.div`
-  max-width: 80%;
+  width: 80%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 40% 1fr;
-  grid-template-rows: 44px 1fr;
+  grid-template-rows: 110px 1fr;
   grid-template-areas: 
-  "header content"
+  "search content"
   "side content";
-  background: lightcoral;
   height: 100vh;
   padding: 5px;
+  border: 2px solid lightgray;
+  overflow-x:hidden;
+  @media (max-device-width: 1030px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
-const Header = styled.div`
-grid-area: header;
+const Search = styled.div`
+  grid-area: search;
+  background: #eeeaea;
 `
 const Side = styled.div`
 grid-area: side;
 `
 
 const ChatContainer = styled.div`
-background: lightcyan;
   grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr 80px;
 `
 
 export {
     ContentWrapper,
     ChatContainer,
-    Header,
+    Search,
     Side
 }

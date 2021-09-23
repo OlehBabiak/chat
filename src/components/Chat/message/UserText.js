@@ -1,13 +1,18 @@
 import React from 'react';
 import MessageDate from ".//MessageDate"
+import {UserTextContainer, UserTextWrapper, DateWrapper} from "../ChatStyled";
 
 function UserText(props) {
     console.log(props)
     return (
-        <div>
-            <div>User: {props.msg.text}</div>
-            <MessageDate date={props.msg.date}/>
-        </div>
+        <UserTextContainer>
+            <UserTextWrapper>
+                <div>{props.msg.text}</div>
+                <DateWrapper>
+                    <MessageDate date={props.msg.date}/>
+                </DateWrapper>
+            </UserTextWrapper>
+        </UserTextContainer>
     );
 }
 

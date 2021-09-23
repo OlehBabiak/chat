@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
 import InputBase from '@mui/material/InputBase';
 import SendIcon from '@mui/icons-material/Send';
+import {InputMessages} from "./ChatStyled";
 
 
 function ChatMessageForm() {
@@ -29,14 +30,20 @@ function ChatMessageForm() {
         setTimeout(() => fetchData(), 5000)
     }
 
+    // const keyDownHandler = (e) => {
+    //     if (e.keyCode === 13) {
+    //         submitHandler()
+    //     }
+    // }
+
     return (
-        <div>
+        <InputMessages>
             <Paper
                 component="form"
-                sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
+                sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '80%' }}
             >
                     <InputBase
-                        sx={{ ml: 1, flex: 1 }}
+                        sx={{ ml: 1, flex: 1}}
                         placeholder="Type your message..."
                         onChange={titleChangeHandler}
                         value={userMessage}
@@ -46,7 +53,7 @@ function ChatMessageForm() {
                         <SendIcon/>
                     </IconButton>}
             </Paper>
-        </div>
+        </InputMessages>
     );
 }
 

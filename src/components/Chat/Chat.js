@@ -5,17 +5,11 @@ import ChatMessageForm from "./ChatMessageForm";
 
 function Chat() {
     return (
-        <div>
-            <div>
-                <ChatMessageTitle/>
-            </div>
-            <div>
-                <ChatMessages/>
-            </div>
-            <div>
-                <ChatMessageForm/>
-            </div>
-        </div>
+        <>
+            <ChatMessageTitle/>
+            <ChatMessages/>
+            <ChatMessageForm/>
+        </>
     );
 }
 

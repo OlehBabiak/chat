@@ -4,12 +4,12 @@ const UserImageWrapper = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin: 0 15px
+  margin: 5px 15px
 `
 
 const UserWrapper = styled.div`
-  width: 100%;
-  background: lemonchiffon;
+  width: 99%;
+  background: #f5f4f1;
   border-bottom: 2px solid gray;
   margin-top: 10px;
   border-radius: 10px;
@@ -27,6 +27,10 @@ const DialogTitle = styled.p`
   justify-content: space-between;
   margin-right: 20px;
   height: 26px;
+  @media (max-device-width: 510px) {
+    display: flex;
+    justify-content: stretch;
+  }
 `
 
 const DialogSubTitle = styled.p`

@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import {useContext} from "react";
 import Context from "../context/Context";
 import ClearSharpIcon from '@mui/icons-material/ClearSharp';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function SearchField() {
 
@@ -17,8 +18,9 @@ export default function SearchField() {
 
     return (
         <Paper
-            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '100%' }}
+            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '97%' }}
         >
+            <SearchIcon />
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="Search or start new chat"

@@ -7,7 +7,7 @@ function UserList() {
     const {userArray, userSearch} = useContext(Context)
     return (
         <div>
-                {userArray
+                {userArray.arr
                     .filter(value => value.name.toLowerCase()
                         .includes(userSearch.toLowerCase()))
                     .map(user =>
