@@ -23,8 +23,8 @@ function ChatMessages() {
                     user.id.toString() === id.slice(1) &&
                     user.messages.map(message =>
                         message.type === 'user' ?
-                            <UserText msg={message}/> :
-                            <BotText msg={message}/>
+                            <UserText key={message.date} msg={message}/> :
+                            <BotText key={message.date}  msg={message}/>
                     )
                 )}
             </MessageField>
