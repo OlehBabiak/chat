@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const ChatTitle = styled.div`
-font-size: 20px;
+  font-size: 20px;
   font-weight: bold;
   background: #eeeaea;
   height: 100%;
@@ -29,7 +29,7 @@ const InputMessages = styled.div`
 `
 
 const UserTextContainer = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: flex-end;
 `
 

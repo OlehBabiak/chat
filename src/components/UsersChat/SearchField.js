@@ -18,18 +18,18 @@ export default function SearchField() {
 
     return (
         <Paper
-            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '97%' }}
+            sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: '97%'}}
         >
-            <SearchIcon />
+            <SearchIcon/>
             <InputBase
-                sx={{ ml: 1, flex: 1 }}
+                sx={{ml: 1, flex: 1}}
                 placeholder="Search or start new chat"
                 onChange={searchChangeHandler}
                 value={userSearch}
             />
-            <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-            <IconButton onClick={cleanSearchField} sx={{ p: '10px' }} aria-label="search">
-                <ClearSharpIcon />
+            <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
+            <IconButton onClick={cleanSearchField} sx={{p: '10px'}} aria-label="search">
+                <ClearSharpIcon/>
             </IconButton>
         </Paper>
     );

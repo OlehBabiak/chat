@@ -1,26 +1,34 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import Context from "../context/Context";
 import BotText from "./message/BotText";
 import UserText from "./message/UserText";
 import {MessageField} from "./ChatStyled";
+import {useParams} from "react-router-dom";
 
 function ChatMessages() {
-
+    const {id} = useParams()
     const {
-        userMessagesList,
+        userArray,
     } = useContext(Context)
+
+    useEffect(() => {
+        localStorage.setItem('users', JSON.stringify(userArray))
+    }, [userArray]);
+
 
     return (
         <>
             <MessageField>
-                {userMessagesList.map(message =>
-                    message.type === 'user' ?
-                        <UserText msg={message}/> :
-                        <BotText msg={message}/>
+                {userArray.map(user =>
+                    user.id.toString() === id.slice(1) &&
+                    user.messages.map(message =>
+                        message.type === 'user' ?
+                            <UserText msg={message}/> :
+                            <BotText msg={message}/>
+                    )
                 )}
             </MessageField>
         </>
-
     );
 }
 

@@ -9,23 +9,23 @@ import Routes from "./components/Routes";
 import {ChatContainer, ContentWrapper, Search, Side} from "./AppStyled";
 
 function App() {
-  return (
-      <Router>
-          <ContextProvider>
-              <ContentWrapper>
-                  <Search>
-                      <ChatSearch/>
-                  </Search>
-                  <Side>
-                      <UserList/>
-                  </Side>
-                  <ChatContainer>
-                      <Routes/>
-                  </ChatContainer>
-              </ContentWrapper>
-          </ContextProvider>
-      </Router>
-  );
+    return (
+        <Router>
+            <ContextProvider>
+                <ContentWrapper>
+                    <Search>
+                        <ChatSearch/>
+                    </Search>
+                    <Side>
+                        <UserList/>
+                    </Side>
+                    <ChatContainer>
+                        <Routes/>
+                    </ChatContainer>
+                </ContentWrapper>
+            </ContextProvider>
+        </Router>
+    );
 }
 
 export default App;

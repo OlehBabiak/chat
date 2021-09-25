@@ -3,7 +3,6 @@ import MessageDate from ".//MessageDate"
 import {UserTextContainer, UserTextWrapper, DateWrapper} from "../ChatStyled";
 
 function UserText(props) {
-    console.log(props)
     return (
         <UserTextContainer>
             <UserTextWrapper>

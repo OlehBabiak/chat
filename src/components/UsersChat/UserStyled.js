@@ -22,15 +22,9 @@ const UserWrapper = styled.div`
 
 const DialogTitle = styled.p`
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
   justify-content: space-between;
   margin-right: 20px;
   height: 26px;
-  @media (max-device-width: 510px) {
-    display: flex;
-    justify-content: stretch;
-  }
 `
 
 const DialogSubTitle = styled.p`
@@ -40,15 +34,19 @@ const DialogSubTitle = styled.p`
 `
 
 const DateWrapper = styled.span`
-font-size: 12px;
+  font-size: 12px;
   color: darkgrey;
   margin-top: 5px;
 `
 
 const UserNameWrapper = styled.span`
-font-size: 15px;
+  font-size: 15px;
   font-weight: bold;
   margin-top: 5px;
+`
+
+const UserContentWrapper = styled.span`
+  width: 100%;
 `
 
 export {
@@ -57,5 +55,6 @@ export {
     DialogTitle,
     DialogSubTitle,
     DateWrapper,
-    UserNameWrapper
+    UserNameWrapper,
+    UserContentWrapper
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom'
 import Chat from "./Chat/Chat";
 
-function Routes(props) {
+function Routes() {
     return (
         <>
             <Switch>

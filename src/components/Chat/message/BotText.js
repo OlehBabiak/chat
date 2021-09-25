@@ -3,7 +3,6 @@ import MessageDate from ".//MessageDate"
 import {BotTextWrapper, DateWrapper} from "../ChatStyled";
 
 function BotText(props) {
-    console.log(props)
     return (
         <div>
             <BotTextWrapper>

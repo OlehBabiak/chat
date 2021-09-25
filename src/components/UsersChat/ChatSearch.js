@@ -1,6 +1,4 @@
 import React from 'react';
-
-import SearchFilter from "./SearchField";
 import SearchField from "./SearchField";
 import {UserImageWrapper} from "./UserStyled";
 
