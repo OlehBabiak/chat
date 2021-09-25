@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Context from "./Context";
 import {InitialUserArray} from "../constants"
-
+import url from "../notification/u_edomlenie-9.mp3"
 
 function ContextProvider({children}) {
 
@@ -27,6 +27,8 @@ function ContextProvider({children}) {
         setUserSearch(e.target.value)
     }
 
+    const [audio] = useState(new Audio(url))
+
     const addMessageFunction = (state, value, id, userStatus) => {
         const arrCopy = [...state];
         const user = arrCopy.find(user => user.id.toString() === id.slice(1))
@@ -43,6 +45,7 @@ function ContextProvider({children}) {
                 const json = await resp.json()
                 const {value} = json
                 setUserArray(addMessageFunction(userArray, value, id, 'bot'))
+                audio.play()
             }
         } catch (err) {
             setError(err.message)
