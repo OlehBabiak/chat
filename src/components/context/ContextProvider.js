@@ -36,8 +36,14 @@ function ContextProvider({children}) {
         return arrCopy
     }
 
+    const upContactsWithNewMsgFunction = (n, state) => {
+        const arrCopy = [...state];
+        arrCopy.unshift(...arrCopy.splice(n,1))
+        return arrCopy
+    }
+
     const fetchData = async (id) => {
-        const xxx = parseInt(id.slice(1)) - 1
+        const ContactWithNewMsgNumber = parseInt(id.slice(1)) - 1
         console.log(typeof (xxx))
         try {
             const resp = await fetch('https://api.chucknorris.io/jokes/random')
@@ -48,11 +54,7 @@ function ContextProvider({children}) {
                 const {value} = json
                 setUserArray(addMessageFunction(userArray, value, id, 'bot'))
                 audio.play()
-                setUserArray((userArray) => {
-                    const arrCopy = [...userArray];
-                    arrCopy.unshift(...arrCopy.splice(xxx,1))
-                    return arrCopy
-                })
+                setUserArray(upContactsWithNewMsgFunction(ContactWithNewMsgNumber, userArray))
             }
         } catch (err) {
             setError(err.message)
@@ -65,6 +67,7 @@ function ContextProvider({children}) {
             searchChangeHandler,
             cleanSearchField,
             addMessageFunction,
+            upContactsWithNewMsgFunction,
             getLocalItem,
             setUserMessage,
             userMessage,

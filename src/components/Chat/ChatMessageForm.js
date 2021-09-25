@@ -19,6 +19,7 @@ function ChatMessageForm() {
         setUserArray,
         addMessageFunction,
         userArray,
+        upContactsWithNewMsgFunction
     } = useContext(Context)
 
     const titleChangeHandler = (e) => {
@@ -27,7 +28,9 @@ function ChatMessageForm() {
 
     const submitHandler = (event) => {
         event.preventDefault()
+        const ContactWithNewMsgNumber = parseInt(id.slice(1)) - 1
         setUserArray(addMessageFunction(userArray, userMessage, id, 'user'))
+        setUserArray(upContactsWithNewMsgFunction(ContactWithNewMsgNumber, userArray))
         setUserMessage("")
         setTimeout(() => fetchData(id), 2000)
     }
