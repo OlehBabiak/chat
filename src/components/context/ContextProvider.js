@@ -38,13 +38,12 @@ function ContextProvider({children}) {
 
     const upContactsWithNewMsgFunction = (n, state) => {
         const arrCopy = [...state];
-        arrCopy.unshift(...arrCopy.splice(n,1))
+        arrCopy.unshift(...arrCopy.splice(n, 1))
         return arrCopy
     }
 
     const fetchData = async (id) => {
         const ContactWithNewMsgNumber = parseInt(id.slice(1)) - 1
-        console.log(typeof (xxx))
         try {
             const resp = await fetch('https://api.chucknorris.io/jokes/random')
             if (!resp.ok) {

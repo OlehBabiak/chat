@@ -35,12 +35,6 @@ function ChatMessageForm() {
         setTimeout(() => fetchData(id), 2000)
     }
 
-    // const keyDownHandler = (e) => {
-    //     if (e.keyCode === 13) {
-    //         submitHandler()
-    //     }
-    // }
-
     return (
         <InputMessages>
             <Paper

@@ -6,8 +6,6 @@ import {Link} from "react-router-dom";
 
 function UserList() {
     const {userArray, userSearch} = useContext(Context)
-    // userArray.sort(( a, b ) => b.messages[b.messages.length-1].date.toLocaleString('en-En') -
-    //     a.messages[a.messages.length-1].date.toLocaleString('en-En'))
 
     return (
         <>
