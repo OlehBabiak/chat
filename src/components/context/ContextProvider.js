@@ -37,6 +37,8 @@ function ContextProvider({children}) {
     }
 
     const fetchData = async (id) => {
+        const xxx = parseInt(id.slice(1)) - 1
+        console.log(typeof (xxx))
         try {
             const resp = await fetch('https://api.chucknorris.io/jokes/random')
             if (!resp.ok) {
@@ -46,6 +48,11 @@ function ContextProvider({children}) {
                 const {value} = json
                 setUserArray(addMessageFunction(userArray, value, id, 'bot'))
                 audio.play()
+                setUserArray((userArray) => {
+                    const arrCopy = [...userArray];
+                    arrCopy.unshift(...arrCopy.splice(xxx,1))
+                    return arrCopy
+                })
             }
         } catch (err) {
             setError(err.message)
