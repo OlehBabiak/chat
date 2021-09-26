@@ -28,9 +28,8 @@ function ChatMessageForm() {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        const ContactWithNewMsgNumber = parseInt(id.slice(1)) - 1
         setUserArray(addMessageFunction(userArray, userMessage, id, 'user'))
-        setUserArray(upContactsWithNewMsgFunction(ContactWithNewMsgNumber, userArray))
+        setUserArray(upContactsWithNewMsgFunction(id, userArray))
         setUserMessage("")
         setTimeout(() => fetchData(id), 2000)
     }

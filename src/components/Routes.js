@@ -6,7 +6,7 @@ function Routes() {
     return (
         <>
             <Switch>
-                <Route path="/:id" component={Chat}/>
+                <Route path="/:id" component={Chat} exact/>
             </Switch>
         </>
     );

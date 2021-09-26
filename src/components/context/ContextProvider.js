@@ -36,14 +36,15 @@ function ContextProvider({children}) {
         return arrCopy
     }
 
-    const upContactsWithNewMsgFunction = (n, state) => {
+    const upContactsWithNewMsgFunction = (id, state) => {
         const arrCopy = [...state];
+        const user = arrCopy.find(user => user.id.toString() === id.slice(1))
+        const n = arrCopy.indexOf(user)
         arrCopy.unshift(...arrCopy.splice(n, 1))
         return arrCopy
     }
 
     const fetchData = async (id) => {
-        const ContactWithNewMsgNumber = parseInt(id.slice(1)) - 1
         try {
             const resp = await fetch('https://api.chucknorris.io/jokes/random')
             if (!resp.ok) {
@@ -53,7 +54,7 @@ function ContextProvider({children}) {
                 const {value} = json
                 setUserArray(addMessageFunction(userArray, value, id, 'bot'))
                 audio.play()
-                setUserArray(upContactsWithNewMsgFunction(ContactWithNewMsgNumber, userArray))
+                setUserArray(upContactsWithNewMsgFunction(id, userArray))
             }
         } catch (err) {
             setError(err.message)
