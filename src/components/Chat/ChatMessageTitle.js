@@ -11,11 +11,11 @@ function ChatMessageTitle() {
 
     return (
         <>
-                    <ChatTitle key={checkedUser.id}>
-                        <UserImageWrapper
-                            src={checkedUser.avatar}/>
-                        <p>{checkedUser.name}</p>
-                    </ChatTitle>
+            <ChatTitle key={checkedUser.id}>
+                <UserImageWrapper
+                    src={checkedUser.avatar}/>
+                <p>{checkedUser.name}</p>
+            </ChatTitle>
         </>
     );
 }
