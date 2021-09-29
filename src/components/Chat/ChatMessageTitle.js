@@ -7,17 +7,15 @@ import {UserImageWrapper} from "../UsersChat/UserStyled";
 function ChatMessageTitle() {
     const {id} = useParams()
     const {userArray} = useContext(Context)
+    const checkedUser = userArray.find(value => value.id.toString() === id.slice(1))
 
     return (
         <>
-            {
-                userArray.filter(value => value.id.toString() === id.slice(1)).map(user =>
-                    <ChatTitle key={user.id}>
+                    <ChatTitle key={checkedUser.id}>
                         <UserImageWrapper
-                            src={user.avatar}/>
-                        <p>{user.name}</p>
-                    </ChatTitle>)
-            }
+                            src={checkedUser.avatar}/>
+                        <p>{checkedUser.name}</p>
+                    </ChatTitle>
         </>
     );
 }
