@@ -34,6 +34,10 @@ function ChatMessageForm() {
         setTimeout(() => fetchData(id), 2000)
     }
 
+    const handleEnter = (event) => {
+        event.key === 'Enter' && submitHandler(event)
+    }
+
     return (
         <InputMessages>
             <Paper
@@ -45,6 +49,7 @@ function ChatMessageForm() {
                     placeholder="Type your message..."
                     onChange={titleChangeHandler}
                     value={userMessage}
+                    onKeyPress={handleEnter}
                 />
                 <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
                 {userMessage.length > 0 && <IconButton onClick={submitHandler} sx={{p: '10px'}} aria-label="search">
