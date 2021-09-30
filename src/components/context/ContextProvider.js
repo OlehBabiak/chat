@@ -8,7 +8,7 @@ function ContextProvider({children}) {
     const getLocalItem = () => {
         const list = localStorage.getItem('users')
         if (list) {
-            return JSON.parse(localStorage.getItem('users'))
+            return JSON.parse(list)
         } else {
             return InitialUserArray
         }
@@ -49,7 +49,8 @@ function ContextProvider({children}) {
             const resp = await fetch('https://api.chucknorris.io/jokes/random')
             if (!resp.ok) {
                 throw  Error('Unfortunately, could not fetch data...')
-            } else {
+            }
+            {
                 const json = await resp.json()
                 const {value} = json
                 setUserArray(addMessageFunction(userArray, value, id, 'bot'))
